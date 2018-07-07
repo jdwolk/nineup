@@ -9,9 +9,7 @@ class NineupCommand extends Command {
   }
 }
 
-NineupCommand.description = `Describe the command here
-...
-Extra documentation goes here
+NineupCommand.description = `Turns a pdf of cards into "9-up" pages, i.e. pre-filled templates with 9 cards to a page
 `
 
 NineupCommand.flags = {

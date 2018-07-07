@@ -100,8 +100,3 @@ const Nineup = () => {
 
 const nineup = Nineup()
 module.exports = nineup
-
-//const dir = __dirname + '/../../testing'
-//const outFile = __dirname + '/../../testing/out.pdf'
-//nineup.create({ dir, outFile })
-//nineup.create({ pdf: __dirname + '/../../testing/Cards v3.pdf', outFile })

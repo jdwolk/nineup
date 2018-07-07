@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "author": "JD Wolk @jdwolk",
   "bin": {
-    "nineup": "./bin/run"
+    "nineup": "bin/run"
   },
   "bugs": "https://github.com/jdwolk/nineup/issues",
   "dependencies": {

@@ -1,18 +1,59 @@
-NineUp
-======
+# NineUp
 
-Turns a pdf containing a set of cards into &#34;9-up&#34; pages, i.e. pre-filled templates with 9 cards to a page
+Are you tabletop game designer tired of adding individual card assets into a "9-up" template by hand?
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/nineup.svg)](https://npmjs.org/package/nineup)
-[![CircleCI](https://circleci.com/gh/jdwolk/nineup/tree/master.svg?style=shield)](https://circleci.com/gh/jdwolk/nineup/tree/master)
-[![Appveyor CI](https://ci.appveyor.com/api/projects/status/github/jdwolk/nineup?branch=master&svg=true)](https://ci.appveyor.com/project/jdwolk/nineup/branch/master)
-[![Codecov](https://codecov.io/gh/jdwolk/nineup/branch/master/graph/badge.svg)](https://codecov.io/gh/jdwolk/nineup)
-[![Downloads/week](https://img.shields.io/npm/dw/nineup.svg)](https://npmjs.org/package/nineup)
-[![License](https://img.shields.io/npm/l/nineup.svg)](https://github.com/jdwolk/nineup/blob/master/package.json)
+(If not, this project probably isn't for you...)
 
-<!-- toc -->
-# Usage
-<!-- usage -->
-# Commands
-<!-- commands -->
+NineUp is a CLI tool that transforms pdfs with individual card pages into "9-up" pages, i.e. pre-filled templates with 9 cards to a page that are ready to cut :scissors: :sparkles: :exclamation:
+
+It turns this:
+
+
+![before](assets/before.png)
+
+Into this:
+
+
+![after](assets/after.png)
+
+
+
+## Requirements:
+Only tested on mac; YMMV on Linux or elsewhere.
+
+* Node (tested on v10.0.0)
+* Yarn
+
+## Setup
+
+```
+$ mkdir ~/.nineup && cd ~/.nineup && git clone git@github.com:jdwolk/nineup.git && cd ./nineup && yarn install && yarn link
+```
+
+Note that if you're using a version manager like [asdf](https://github.com/asdf-vm/asdf) you may need to rehash and/or reshim:
+
+```
+$ asdf reshim nodejs
+```
+
+## Running
+
+```
+$ nineup --pdf ./AllCards.pdf --out ./out.pdf
+```
+
+This will create .jpg files for all pages (cards) in `AllCards.pdf` and output the 9-up file to `out.pdf`. The created .jpg files will live in the same directory as `AllCards.pdf`.
+
+If you want to supply your own images, you can pass the `--dir` option instead of `--pdf`:
+
+```
+$ nineup --dir ./dir-with-imgs --out out.pdf
+```
+
+This will skip the step where images are created from a supplied PDF.
+
+## TODO
+
+* Get PNGs working; JPGs suck
+  * Right now PNGs are busted in PDFKit, the lib used to generate the PDF: https://github.com/devongovett/pdfkit/issues/766
+* GUI tool?
