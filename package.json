@@ -1,0 +1,43 @@
+{
+  "name": "nineup",
+  "description": "Turns a pdf containing a set of cards into \"9-up\" pages, i.e. pre-filled templates with 9 cards to a page",
+  "version": "0.0.1",
+  "author": "JD Wolk @jdwolk",
+  "bin": {
+    "nineup": "./bin/run"
+  },
+  "bugs": "https://github.com/jdwolk/nineup/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "pdfkit": "^0.8.3",
+    "pdftoimage": "^1.0.0",
+    "ramda": "^0.25.0"
+  },
+  "devDependencies": {
+    "eslint": "^4",
+    "eslint-config-oclif": "^1"
+  },
+  "engines": {
+    "node": ">=9.0.0"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "homepage": "https://github.com/jdwolk/nineup",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "bin": "nineup"
+  },
+  "repository": "jdwolk/nineup",
+  "scripts": {
+    "posttest": "eslint .",
+    "test": "echo NO TESTS"
+  }
+}
